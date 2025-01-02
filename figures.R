@@ -133,7 +133,7 @@ eu <- str_to_lower(eu)
 world <- merge(world, countries_fa, by = 'sovereignt', all.y = TRUE, all.x = TRUE)
 
 # Update the count for EU member states to reflect the count for "EU"
-world$count <- ifelse(world$sovereignt %in% eu, countries_fa$count[27], world$count)
+world$count <- ifelse(world$sovereignt %in% eu, countries_fa$count[countries_fa$actor == "eu"], world$count)
 
 # Rename the count column for better interpretation in the plot
 world$Interventions <- world$count
