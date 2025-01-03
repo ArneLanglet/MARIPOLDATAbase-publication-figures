@@ -119,7 +119,7 @@ countries_fa$actor[countries_fa$actor == "timor-leste"] <- 'east timor'
 countries_fa$actor[countries_fa$actor == "tunesia"] <- 'tunisia'
 #Cook Islands and Palestine are listed under other sovereign states in the "world" data set
 
-# Filter for countries that are in the world map dataset or represent the EU
+# Filter actors for countries that are in the world map dataset or represent the EU
 countries_fa <- countries_fa %>% filter(actor %in% countries_list | actor == "eu")
 
 # Add a new column to facilitate merging with the world map dataset
@@ -149,7 +149,7 @@ ggplot() +
  scale_fill_viridis_c(
     option = "plasma", 
     trans = "sqrt",  # Apply a square root transformation to the fill scale
-    name = "Number of \nInterventions",  # Custom legend title
+    name = "Number of \nInterventions, Opening or\nClosing Statements",  # Custom legend title
     breaks = c(25, 50, 75, 100, 125),  # Specify the breakpoints for the scale
   ) +
   theme_minimal() +  # Use a minimal theme for clean visualization
