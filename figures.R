@@ -166,7 +166,10 @@ ggplot() +
   )
 ################### figure 5
 # Filter the data to include only specific negotiation formats
-df <- filter(bbnj, negotiation_format %in% c("plenary", "working group"))
+# Exclude rows where 'double' equals 1
+bbnj_ac <- filter(bbnj, double != 1)
+
+df <- filter(bbnj_ac, negotiation_format %in% c("plenary", "working group"))
 # Check the representation of 'obo' (observer) groups
 table(df$obo)
 
