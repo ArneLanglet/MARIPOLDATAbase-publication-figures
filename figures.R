@@ -232,7 +232,6 @@ figure5
 
 ############################## figure 10 
 
-
 # Filter the dataset to retain only relevant columns and rows
 bbnj_filtered <- bbnj %>%
   filter(!is.na(sentiment_constr), !is.na(date), !is.na(IGC), IGC %in% c("1", "2", "3", "4", "5", "5.2", "5.3")) %>%
